@@ -105,7 +105,10 @@
       <!-- Contact Form -->
       <div class="contact-form">
         <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
-        <form action="mailto:reindolfpratt@gmail.com" method="post" enctype="text/plain">
+        <form id="contactForm">
+          <input type="hidden" name="access_key" value="0a914020-4a5c-42da-8203-5186ed8ccce8">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Jane Doe" required>
@@ -127,6 +130,7 @@
           </div>
 
           <button type="submit" class="btn btn-navy" style="width: 100%;">Send Message →</button>
+          <p id="formResult" role="status" style="margin: 1rem 0 0; text-align: center; font-size: 0.9rem; font-weight: 600; min-height: 1.2em;"></p>
         </form>
       </div>
 
@@ -161,6 +165,48 @@
     mobileDrawer.classList.toggle('open');
     menuToggle.textContent = mobileDrawer.classList.contains('open') ? '✕' : '☰';
   });
+
+  const contactForm = document.getElementById('contactForm');
+  const formResult = document.getElementById('formResult');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData);
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      formResult.style.color = 'var(--text-muted)';
+      formResult.textContent = '';
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json();
+
+        if (response.status === 200 && result.success) {
+          formResult.style.color = '#1a7f4e';
+          formResult.textContent = "Thanks, your message is in. I'll get back to you soon.";
+          contactForm.reset();
+        } else {
+          formResult.style.color = '#b3261e';
+          formResult.textContent = 'Something went wrong. Please try emailing me directly at reindolfpratt@gmail.com.';
+        }
+      } catch (error) {
+        formResult.style.color = '#b3261e';
+        formResult.textContent = 'Something went wrong. Please try emailing me directly at reindolfpratt@gmail.com.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message →";
+      }
+    });
+  }
 </script>
 
 </body>
