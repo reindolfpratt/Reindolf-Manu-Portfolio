@@ -74,7 +74,7 @@
       </div>
       <div>
         <span class="field-label">MEASURABLE IMPACT</span>
-        <p style="font-weight: 700; color: var(--navy); margin: 0;">40+ Weekly Form Entries Automated to 0</p>
+        <p style="font-weight: 700; color: var(--navy); margin: 0;">40+ weekly manual entries eliminated</p>
       </div>
     </div>
   </div>
@@ -84,7 +84,6 @@
   <div class="container" style="max-width: 850px;">
     
     <div style="margin-bottom: 3rem;">
-      <span class="eyebrow">THE PROBLEM</span>
       <h2>Manual Lead Ingestion &amp; Duplicate Records</h2>
       <p>
         Client organizations acquiring inbound leads across custom landing pages, JotForm surveys, and event sign-up forms suffered from delayed follow-up times. Leads sat unassigned in form mailboxes, and manual copy-pasting into Salesforce introduced duplicate contacts and missing attribution fields.
@@ -92,29 +91,27 @@
     </div>
 
     <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
-      <span class="eyebrow">THE ARCHITECTURE</span>
       <h2>Automated Multi-Channel Webhook Pipeline</h2>
       <p>
-        At Cohby Consulting Services, I architected an automated ingestion workflow:
+        At Cohby Consulting Services, I built an automated ingestion workflow:
       </p>
       <ul class="timeline-bullets">
         <li><strong>Webhook Endpoint Ingestion:</strong> Form submissions trigger instant JSON payload POST requests to configured Zapier middleware.</li>
-        <li><strong>Duplicate Matching &amp; CRM Routing:</strong> Checked incoming email addresses against existing Salesforce Leads and Contacts using Upsert logic. If found, updated existing records; if new, created Lead records with auto-assigned lead owner rules.</li>
-        <li><strong>Automated Email Journey Trigger:</strong> Pushed validated leads directly to Mailchimp audience segments, firing instant personalized welcome sequences within 45 seconds of form submission.</li>
+        <li><strong>Duplicate Matching &amp; CRM Routing:</strong> Checks incoming email addresses against existing Salesforce Leads and Contacts using upsert logic — updates existing records, creates new Lead records with auto-assigned owner rules when there's no match.</li>
+        <li><strong>Automated Email Journey Trigger:</strong> Pushes validated leads directly to Mailchimp audience segments, which fires a personalized welcome sequence shortly after form submission.</li>
       </ul>
     </div>
 
     <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
-      <span class="eyebrow">CONCRETE METRICS</span>
-      <h2>Operational Results</h2>
+      <h2>What changed</h2>
       <div class="card-grid">
         <div class="card card-navy">
-          <div class="stat-number" style="color: var(--lime);">40 → 0</div>
-          <div class="stat-label" style="color: rgba(255,255,255,0.85);">Manual form data entries per week cut to zero</div>
+          <div class="stat-number" style="color: var(--lime);">40+ → 0</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.85);">Manual form data entries per week</div>
         </div>
         <div class="card card-navy">
-          <div class="stat-number" style="color: var(--lime);">&lt;45 Sec</div>
-          <div class="stat-label" style="color: rgba(255,255,255,0.85);">Lead submission to automated email follow-up time</div>
+          <div class="stat-number" style="color: var(--lime);">~1 min</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.85);">From lead submission to automated follow-up email</div>
         </div>
       </div>
     </div>
