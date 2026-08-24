@@ -1,22 +1,22 @@
 /* =========================================================
    Reindolf Manu — Portfolio
-   Design Language: Deep Navy, Fresh Mint & Vibrant Amber
+   Design Language: Steel Blue, Fresh Mint & Vibrant Amber
    Inspired by modern, high-impact data & consulting portfolios.
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --navy: #00183B;
-  --navy-light: #0A2652;
+  --navy: #00558c;
+  --navy-light: #004470;
   --mint: #DCF6F1;
   --mint-soft: #EEFBF8;
   --white: #FFFFFF;
   --lime: #e97e01;
   --lime-hover: #cc6e00;
-  --text: #00183B;
-  --text-muted: rgba(0, 24, 59, 0.72);
-  --border: rgba(0, 24, 59, 0.12);
+  --text: #00558c;
+  --text-muted: rgba(0, 85, 140, 0.72);
+  --border: rgba(0, 85, 140, 0.12);
   --border-dark: rgba(255, 255, 255, 0.15);
 
   --font-display: "Space Grotesk", -apple-system, sans-serif;
