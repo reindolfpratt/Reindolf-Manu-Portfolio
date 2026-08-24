@@ -1,6 +1,6 @@
 /* =========================================================
    Reindolf Manu — Portfolio
-   Design Language: Steel Blue, Dusty Rose & Vibrant Amber
+   Design Language: Steel Blue, Fresh Mint & Electric Lime
    Inspired by modern, high-impact data & consulting portfolios.
    ========================================================= */
 
@@ -9,11 +9,11 @@
 :root {
   --navy: #00558c;
   --navy-light: #004470;
-  --mint: #d5a6bd;
-  --mint-soft: #f3e5eb;
+  --mint: #DCF6F1;
+  --mint-soft: #EEFBF8;
   --white: #FFFFFF;
-  --lime: #e97e01;
-  --lime-hover: #cc6e00;
+  --lime: #ECFCAC;
+  --lime-hover: #D8F283;
   --text: #00558c;
   --text-muted: rgba(0, 85, 140, 0.72);
   --border: rgba(0, 85, 140, 0.12);
