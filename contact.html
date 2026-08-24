@@ -175,6 +175,12 @@
 
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const formData = new FormData(contactForm);
+      
+      // Set customized email subject and sender name for Web3Forms
+      const userSubject = formData.get('subject') || 'General Inquiry';
+      formData.set('subject', `New message from your portfolio website: ${userSubject}`);
+      formData.set('from_name', 'Portfolio Contact Form');
+
       const payload = Object.fromEntries(formData);
 
       submitBtn.disabled = true;
