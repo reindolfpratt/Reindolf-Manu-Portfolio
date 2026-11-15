@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>360 Feedback Process · Reindolf Manu</title>
+<meta name="description" content="Case Study: an in-house 360 feedback process built on Salesforce Flows, LWC and Experience Cloud for Clore Social Leadership by Reindolf Manu.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2300183B'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-weight='bold' font-size='22' fill='%23ECFCAC' text-anchor='middle'%3ERM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<!-- Navigation Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-badge">RM</div>
+      <span class="logo-text">Reindolf Manu</span>
+    </a>
+
+    <nav class="nav-desktop">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../education.html">Education &amp; Certs</a>
+      <a href="../sfdc-projects.html" aria-current="page">Salesforce Work</a>
+      <a href="../data-science.html">Data &amp; AI Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="../contact.html" class="btn btn-primary">Let's talk</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+      ☰
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../education.html">Education &amp; Certs</a>
+  <a href="../sfdc-projects.html" aria-current="page">Salesforce Work</a>
+  <a href="../data-science.html">Data &amp; AI Projects</a>
+  <a href="../contact.html">Contact</a>
+  <a href="../contact.html" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Let's talk</a>
+</div>
+
+<!-- Project Hero Banner -->
+<section class="section section-navy" style="padding: 4rem 1.5rem 3rem;">
+  <div class="container">
+    <a href="../sfdc-projects.html" style="color: var(--lime); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Back to Salesforce Projects</a>
+    <span class="eyebrow">SALESFORCE &amp; EXPERIENCE CLOUD</span>
+    <h1 style="font-size: clamp(2rem, 4.5vw, 3.25rem);">360 Feedback Process</h1>
+    <p class="lead" style="color: rgba(255, 255, 255, 0.85);">
+      Bringing an outsourced 360 feedback process in-house for Clore Social Leadership, built on Flows, a Lightning Web Component and Experience Cloud.
+    </p>
+  </div>
+</section>
+
+<!-- Metadata Bar -->
+<section class="section-white" style="border-bottom: 1px solid var(--border); padding: 1.75rem 1.5rem;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;" class="meta-bar-grid">
+      <div>
+        <span class="field-label">ROLE</span>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Programs &amp; CRM Administrator</p>
+      </div>
+      <div>
+        <span class="field-label">ORGANISATION</span>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Clore Social Leadership</p>
+      </div>
+      <div>
+        <span class="field-label">TOOLS &amp; TECH</span>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Flows, LWC, Experience Cloud, Apex, Jotform</p>
+      </div>
+      <div>
+        <span class="field-label">OUTCOME</span>
+        <p style="font-weight: 700; color: var(--navy); margin: 0;">Outsourcing dependency removed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Case Study Content -->
+<section class="section section-white">
+  <div class="container" style="max-width: 850px;">
+
+    <div style="margin-bottom: 3rem;">
+      <h2>The problem</h2>
+      <p>
+        Clore Social was paying a third-party vendor to run the 360 feedback process for its participants. It is a core part of the programme, but nobody inside the organisation owned it, and the outsourcing costs were significant.
+      </p>
+    </div>
+
+    <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
+      <h2>What I built</h2>
+      <p>
+        I designed and built a custom version of the whole process using Flows and a Lightning Web Component, published through Salesforce Experience Cloud so respondents could take part from outside the org. It replicates and improves the full 360 workflow, embedded directly in Salesforce, so staff can run it without an external consultant.
+      </p>
+      <p>
+        I designed the data model, the UI and the submission logic in-house. Flows handle the respondent side, such as sending respondents their emails and updating records once those emails have gone out.
+      </p>
+    </div>
+
+    <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
+      <h2>What changed</h2>
+      <p>
+        The outsourcing dependency is gone, which saves the organisation substantial annual spend, and the team now has full control over the feedback process.
+      </p>
+    </div>
+
+    <div style="padding-top: 2rem; border-top: 1px dashed var(--border);">
+      <h2>Project snapshots</h2>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flow-update-after-respondent-email.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flow-update-after-respondent-email.png" alt="Salesforce record-triggered flow on 360 Respondents that gets new respondent records, sends 360 emails and updates records" loading="lazy"></a>
+        <figcaption>This is a flow I created to automatically update record after sending respondents an email</figcaption>
+      </figure>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flow-follow-up-non-respondents.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flow-follow-up-non-respondents.png" alt="Scheduled Salesforce flow that loops through signed records and sends follow-up emails to people who have not responded" loading="lazy"></a>
+        <figcaption>This was a simple flow to check on who hasn&#8217;t submitted a response and follow up on them.</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation CTA -->
+<section class="section section-hero">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Need Salesforce Automation for Your Organization?</h2>
+      <p>Let me help you build scalable Salesforce Flows, data governance rules, and custom integrations.</p>
+      <a href="../contact.html" class="btn btn-navy">Let's talk →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Reindolf Manu</div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../education.html">Education</a>
+      <a href="../sfdc-projects.html">Salesforce</a>
+      <a href="../data-science.html">Data &amp; AI</a>
+      <a href="../contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/reindolf-m-80810088/" target="_blank" rel="noopener" style="color: var(--lime);">LinkedIn ↗</a>
+    </div>
+    <div style="font-size: 0.8rem;">
+      © 2026 Reindolf Manu · All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+
+  menuToggle.addEventListener('click', () => {
+    mobileDrawer.classList.toggle('open');
+    menuToggle.textContent = mobileDrawer.classList.contains('open') ? '✕' : '☰';
+  });
+</script>
+
+</body>
+</html>

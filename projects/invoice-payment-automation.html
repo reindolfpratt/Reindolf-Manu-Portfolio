@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated Invoice &amp; Payment Lifecycle · Reindolf Manu</title>
+<meta name="description" content="Case Study: an end-to-end invoice and payment lifecycle automated in Salesforce with Flows and Xero for Clore Social Leadership by Reindolf Manu.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2300183B'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-weight='bold' font-size='22' fill='%23ECFCAC' text-anchor='middle'%3ERM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<!-- Navigation Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-badge">RM</div>
+      <span class="logo-text">Reindolf Manu</span>
+    </a>
+
+    <nav class="nav-desktop">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../education.html">Education &amp; Certs</a>
+      <a href="../sfdc-projects.html" aria-current="page">Salesforce Work</a>
+      <a href="../data-science.html">Data &amp; AI Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="../contact.html" class="btn btn-primary">Let's talk</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+      ☰
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../education.html">Education &amp; Certs</a>
+  <a href="../sfdc-projects.html" aria-current="page">Salesforce Work</a>
+  <a href="../data-science.html">Data &amp; AI Projects</a>
+  <a href="../contact.html">Contact</a>
+  <a href="../contact.html" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Let's talk</a>
+</div>
+
+<!-- Project Hero Banner -->
+<section class="section section-navy" style="padding: 4rem 1.5rem 3rem;">
+  <div class="container">
+    <a href="../sfdc-projects.html" style="color: var(--lime); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Back to Salesforce Projects</a>
+    <span class="eyebrow">SALESFORCE &amp; FINANCE AUTOMATION</span>
+    <h1 style="font-size: clamp(2rem, 4.5vw, 3.25rem);">Automated Invoice &amp; Payment Lifecycle</h1>
+    <p class="lead" style="color: rgba(255, 255, 255, 0.85);">
+      Automating invoices, payment reminders, credit notes and payment status inside Salesforce for Clore Social Leadership&#8217;s finance team.
+    </p>
+  </div>
+</section>
+
+<!-- Metadata Bar -->
+<section class="section-white" style="border-bottom: 1px solid var(--border); padding: 1.75rem 1.5rem;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;" class="meta-bar-grid">
+      <div>
+        <span class="field-label">ROLE</span>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Programs &amp; CRM Administrator</p>
+      </div>
+      <div>
+        <span class="field-label">ORGANISATION</span>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Clore Social Leadership</p>
+      </div>
+      <div>
+        <span class="field-label">TOOLS &amp; TECH</span>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Salesforce Flows, Xero, Email Alerts, Custom Objects</p>
+      </div>
+      <div>
+        <span class="field-label">OUTCOME</span>
+        <p style="font-weight: 700; color: var(--navy); margin: 0;">Manual invoice tracking eliminated</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Case Study Content -->
+<section class="section section-white">
+  <div class="container" style="max-width: 850px;">
+
+    <div style="margin-bottom: 3rem;">
+      <h2>The problem</h2>
+      <p>
+        The finance team was tracking participant invoices by hand: chasing unpaid balances, issuing credit notes and reconciling payments. It took a lot of time, errors crept in, follow-ups got missed, and some invoices went unpaid as a result.
+      </p>
+    </div>
+
+    <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
+      <h2>What I built</h2>
+      <p>
+        I built an end-to-end invoice lifecycle inside Salesforce:
+      </p>
+      <ul class="timeline-bullets" style="margin-bottom: 1.5rem;">
+        <li><strong>Invoice on sign-up:</strong> an invoice is generated the moment a participant signs up.</li>
+        <li><strong>Unpaid reminders:</strong> follow-up email alerts are scheduled automatically for unpaid invoices.</li>
+        <li><strong>Credit notes:</strong> finance is notified when a credit note needs to be issued.</li>
+        <li><strong>Payment status:</strong> the payment record is marked as paid automatically once payment is confirmed.</li>
+      </ul>
+      <p>
+        Nobody has to step in manually at any stage.
+      </p>
+    </div>
+
+    <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
+      <h2>What changed</h2>
+      <p>
+        Manual invoice tracking stopped across the finance team, missed payment follow-ups dropped to near zero, and leadership can see outstanding balances and payment status at any time.
+      </p>
+    </div>
+
+    <div style="padding-top: 2rem; border-top: 1px dashed var(--border);">
+      <h2>Project snapshots</h2>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/invoice-lifecycle-diagram.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/invoice-lifecycle-diagram.png" alt="Diagram of the invoice lifecycle: participant sign-up, invoice generated, reminder if unpaid, credit note alert to finance, payment record marked paid" loading="lazy"></a>
+        <figcaption>How the lifecycle runs, from sign-up to paid. (Process diagram, not a screenshot.)</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation CTA -->
+<section class="section section-hero">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Need Salesforce Automation for Your Organization?</h2>
+      <p>Let me help you build scalable Salesforce Flows, data governance rules, and custom integrations.</p>
+      <a href="../contact.html" class="btn btn-navy">Let's talk →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Reindolf Manu</div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../education.html">Education</a>
+      <a href="../sfdc-projects.html">Salesforce</a>
+      <a href="../data-science.html">Data &amp; AI</a>
+      <a href="../contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/reindolf-m-80810088/" target="_blank" rel="noopener" style="color: var(--lime);">LinkedIn ↗</a>
+    </div>
+    <div style="font-size: 0.8rem;">
+      © 2026 Reindolf Manu · All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+
+  menuToggle.addEventListener('click', () => {
+    mobileDrawer.classList.toggle('open');
+    menuToggle.textContent = mobileDrawer.classList.contains('open') ? '✕' : '☰';
+  });
+</script>
+
+</body>
+</html>
