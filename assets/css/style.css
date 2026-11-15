@@ -858,3 +858,104 @@ textarea.form-control {
   height: 220px;
   object-fit: contain;
 }
+
+/* ---------- Flow case studies (step-by-step pages, before/after results) ---------- */
+.flow-step {
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border);
+}
+
+.flow-step h3 {
+  margin-top: 1.5rem;
+}
+
+.flow-name,
+.flow-note {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.flow-note {
+  margin-bottom: 1.5rem;
+}
+
+.layer-list {
+  margin: 1rem 0 1.5rem 1.25rem;
+}
+
+.layer-list li {
+  margin-bottom: 0.6rem;
+}
+
+.scale-note,
+.outcome-callout {
+  background: var(--mint-soft);
+  border-left: 4px solid var(--navy);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.outcome-callout p {
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+}
+
+.ba-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.ba-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 0.75rem 0.75rem;
+  border-bottom: 2px solid var(--navy);
+}
+
+.ba-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.ba-table .ba-before {
+  color: var(--text-muted);
+  width: 44%;
+}
+
+.ba-table .ba-arrow {
+  color: var(--navy);
+  font-weight: 700;
+  width: 1.5rem;
+}
+
+.ba-table .ba-after {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.figure-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .figure-tiles {
+    grid-template-columns: 1fr;
+  }
+}

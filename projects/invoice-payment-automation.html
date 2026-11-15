@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automated Invoice &amp; Payment Lifecycle · Reindolf Manu</title>
-<meta name="description" content="Case Study: an end-to-end invoice and payment lifecycle automated in Salesforce with Flows and Xero for Clore Social Leadership by Reindolf Manu.">
+<title>Finance &amp; Invoice Automation · Reindolf Manu</title>
+<meta name="description" content="Case Study: Salesforce Flows that make the Invoice Tracker the shared source of truth between Programmes and Finance, automating six hand-offs from signed agreement to credit note, by Reindolf Manu.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2300183B'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-weight='bold' font-size='22' fill='%23ECFCAC' text-anchor='middle'%3ERM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -53,10 +53,13 @@
   <div class="container">
     <a href="../sfdc-projects.html" style="color: var(--lime); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Back to Salesforce Projects</a>
     <span class="eyebrow">SALESFORCE &amp; FINANCE AUTOMATION</span>
-    <h1 style="font-size: clamp(2rem, 4.5vw, 3.25rem);">Automated Invoice &amp; Payment Lifecycle</h1>
+    <h1 style="font-size: clamp(2rem, 4.5vw, 3.25rem);">Finance &amp; Invoice Automation</h1>
     <p class="lead" style="color: rgba(255, 255, 255, 0.85);">
-      Automating invoices, payment reminders, credit notes and payment status inside Salesforce for Clore Social Leadership&#8217;s finance team.
+      Building the invoice tracker from signed agreements, alerting Finance at the right moments and catching withdrawals that need a credit note, with Salesforce Flows for a UK leadership-development charity.
     </p>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+      <a href="../assets/docs/Reindolf_Manu_Salesforce_Flows_Portfolio.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download the Salesforce Flows portfolio (PDF)</a>
+    </div>
   </div>
 </section>
 
@@ -70,15 +73,15 @@
       </div>
       <div>
         <span class="field-label">ORGANISATION</span>
-        <p style="font-weight: 600; color: var(--navy); margin: 0;">Clore Social Leadership</p>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">UK leadership-development charity</p>
       </div>
       <div>
         <span class="field-label">TOOLS &amp; TECH</span>
-        <p style="font-weight: 600; color: var(--navy); margin: 0;">Salesforce Flows, Xero, Email Alerts, Custom Objects</p>
+        <p style="font-weight: 600; color: var(--navy); margin: 0;">Salesforce Flow (record-triggered), Email Alerts, Formulas, Custom Objects</p>
       </div>
       <div>
         <span class="field-label">OUTCOME</span>
-        <p style="font-weight: 700; color: var(--navy); margin: 0;">Manual invoice tracking eliminated</p>
+        <p style="font-weight: 700; color: var(--navy); margin: 0;">6 Programmes&#8211;Finance hand-offs automated</p>
       </div>
     </div>
   </div>
@@ -89,41 +92,208 @@
   <div class="container" style="max-width: 850px;">
 
     <div style="margin-bottom: 3rem;">
-      <h2>The problem</h2>
+      <h2>The challenge</h2>
       <p>
-        The finance team was tracking participant invoices by hand: chasing unpaid balances, issuing credit notes and reconciling payments. It took a lot of time, errors crept in, follow-ups got missed, and some invoices went unpaid as a result.
+        Programme fees are invoiced by the Finance team, but the information they need lives with the Programmes team: who has signed an agreement, which organisation to invoice, who is on a bursary and who has withdrawn. The invoice tracker was compiled by hand, Finance was told about new invoices by ad-hoc emails, and withdrawals or deferrals after an invoice had gone out were not always flagged, so credit notes could be missed.
       </p>
     </div>
 
     <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
-      <h2>What I built</h2>
+      <h2>The approach</h2>
       <p>
-        I built an end-to-end invoice lifecycle inside Salesforce:
+        I made the <strong>Invoice Tracker</strong> object the shared source of truth between the two teams and automated each hand-off:
       </p>
-      <ul class="timeline-bullets" style="margin-bottom: 1.5rem;">
-        <li><strong>Invoice on sign-up:</strong> an invoice is generated the moment a participant signs up.</li>
-        <li><strong>Unpaid reminders:</strong> follow-up email alerts are scheduled automatically for unpaid invoices.</li>
-        <li><strong>Credit notes:</strong> finance is notified when a credit note needs to be issued.</li>
-        <li><strong>Payment status:</strong> the payment record is marked as paid automatically once payment is confirmed.</li>
-      </ul>
-      <p>
-        Nobody has to step in manually at any stage.
-      </p>
+      <ol class="layer-list">
+        <li><strong>Populate:</strong> A tracker record is created from the signed participant agreement, enriched from the application.</li>
+        <li><strong>Notify:</strong> Finance is emailed when a new participant needs invoicing, with bursary and partner places excluded.</li>
+        <li><strong>Schedule:</strong> The payment due date is set automatically the moment an invoice is marked as sent.</li>
+        <li><strong>Sync:</strong> Participant status changes on the Contact flow through to the tracker, with fallbacks and an alert if no record is found.</li>
+        <li><strong>Protect:</strong> Finance is alerted to raise a credit note when an invoiced participant withdraws or defers.</li>
+        <li><strong>Protect:</strong> Finance is alerted when a bursary participant withdraws or defers.</li>
+      </ol>
     </div>
 
-    <div style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
-      <h2>What changed</h2>
-      <p>
-        Manual invoice tracking stopped across the finance team, missed payment follow-ups dropped to near zero, and leadership can see outstanding balances and payment status at any time.
-      </p>
+    <div class="flow-step" id="step-1">
+      <span class="field-label">STEP 1 · POPULATE</span>
+      <h2>Build the invoice tracker from the signed agreement</h2>
+      <p class="flow-name">Flow: Populate Invoice Tracker</p>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flows/invoice-1-populate.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flows/invoice-1-populate.png" alt="Record-triggered flow diagram: on an Agreement, find the Contact by email, get the application values, and create an Invoice Tracker record" loading="lazy"></a>
+        <figcaption>Step 1 flow, drawn from its live metadata. Click to open full size.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>Invoice details were copied by hand from two places, the application and the participant agreement, which was slow and error-prone.</p>
+      <h3>What the flow does</h3>
+      <p>When a participant agreement for one of the in-scope leadership programmes is created or updated with an email address, the flow finds the Contact and the matching application, then creates an Invoice Tracker record with name, email, organisation, invoice address, programme, discount code, bursary flags and corporate partner status.</p>
+      <h3>Design highlights</h3>
+      <p>Layered fallbacks: the participant lookup is taken from the agreement, then the application, then the Contact; the organisation from the application, then the Contact. Formulas default safely when no application is found. Scoped to the relevant record types only.</p>
+      <div class="outcome-callout">
+        <span class="field-label">OUTCOME</span>
+        <p>The invoice tracker builds itself from the signed agreement. Invoice details are no longer copied by hand from the application and the agreement.</p>
+      </div>
+    </div>
+
+    <div class="flow-step" id="step-2">
+      <span class="field-label">STEP 2 · NOTIFY</span>
+      <h2>Tell Finance when a new invoice is needed</h2>
+      <p class="flow-name">Flow: Send alert to Finance to send an invoice</p>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flows/invoice-2-notify.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flows/invoice-2-notify.png" alt="Record-triggered flow diagram: when a new Invoice Tracker record is created, email Finance" loading="lazy"></a>
+        <figcaption>Step 2 flow. Click to open full size.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>Finance relied on ad-hoc emails from the Programmes team to know who to invoice.</p>
+      <h3>What the flow does</h3>
+      <p>When a new Invoice Tracker record is created, Finance receives a branded &#8220;New Participant To Invoice&#8221; email with the details they need.</p>
+      <h3>Design highlights</h3>
+      <p>Entry conditions exclude participants on a bursary, on a named bursary or applying through a corporate partner, so Finance is only asked to invoice fee-paying participants.</p>
+      <div class="outcome-callout">
+        <span class="field-label">OUTCOME</span>
+        <p>Finance is told about every fee-paying participant as soon as the signed agreement reaches Salesforce, and is never asked to invoice a bursary or partner place.</p>
+      </div>
+    </div>
+
+    <div class="flow-step" id="step-3">
+      <span class="field-label">STEP 3 · SCHEDULE</span>
+      <h2>Set the payment due date automatically</h2>
+      <p class="flow-name">Flow: FIN - Populate Invoice due date immediately Invoice sent is ticked</p>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flows/invoice-3-due-date.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flows/invoice-3-due-date.png" alt="Record-triggered flow diagram: when Invoice Sent is ticked, set the due date 30 days ahead, moved off weekends" loading="lazy"></a>
+        <figcaption>Step 3 flow. Click to open full size.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>Due dates were entered inconsistently, which made chasing overdue invoices unreliable.</p>
+      <h3>What the flow does</h3>
+      <p>The moment Finance ticks Invoice Sent, the flow sets the due date to 30 days ahead.</p>
+      <h3>Design highlights</h3>
+      <p>A formula moves the date to the following Monday when 30 days lands on a Saturday or Sunday, so every due date is a working day.</p>
+      <div class="outcome-callout">
+        <span class="field-label">OUTCOME</span>
+        <p>Every sent invoice gets a consistent due date on a working day, so overdue invoices can be chased reliably.</p>
+      </div>
+    </div>
+
+    <div class="flow-step" id="step-4">
+      <span class="field-label">STEP 4 · SYNC</span>
+      <h2>Keep invoice status in step with the participant</h2>
+      <p class="flow-name">Flow: Update Invoice Tracker Participant Status as Contact Status Changes</p>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flows/invoice-4-status-sync.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flows/invoice-4-status-sync.png" alt="Record-triggered flow diagram with two-tier matching, a self-healing Contact link and an alert when no tracker is found" loading="lazy"></a>
+        <figcaption>Step 4 flow, showing both matching tiers and the alert path. Click to open full size.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>When a participant&#8217;s status changed (for example to withdrawn or deferred), the tracker did not reflect it, and the earlier version of this flow failed silently whenever the tracker was not linked to the Contact.</p>
+      <h3>What the flow does</h3>
+      <p>When a Contact&#8217;s participant status changes, the flow finds the Invoice Tracker by Contact and programme and updates the status. If that fails, it falls back to email, name and programme, updates the status and back-fills the missing Contact link. If no tracker exists at all, it emails the programme lead.</p>
+      <h3>Design highlights</h3>
+      <p>Rebuilt as a more resilient replacement for the original flow: two-tier matching, self-healing data (it repairs the missing lookup), fault paths routed to an alert rather than an error, and no silent failures.</p>
+      <div class="outcome-callout">
+        <span class="field-label">OUTCOME</span>
+        <p>The tracker always reflects the participant&#8217;s current status. Missing links repair themselves, and a missing tracker record raises an alert instead of failing silently.</p>
+      </div>
+    </div>
+
+    <div class="flow-step" id="step-5">
+      <span class="field-label">STEP 5 · PROTECT</span>
+      <h2>Prompt a credit note when an invoiced participant leaves</h2>
+      <p class="flow-name">Flow: Flow to alert Finance to raise credit note</p>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flows/invoice-5-credit-note.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flows/invoice-5-credit-note.png" alt="Record-triggered flow diagram: when an invoiced participant withdraws or defers, alert Finance to raise a credit note" loading="lazy"></a>
+        <figcaption>Step 5 flow. Click to open full size.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>Withdrawals and deferrals after an invoice had gone out were not reliably passed to Finance, so credit notes could be missed.</p>
+      <h3>What the flow does</h3>
+      <p>When an Invoice Tracker record changes to Application Withdrawn, Programme Withdrawn or Deferred, the invoice has been sent and no credit note has been issued, Finance receives an alert with the invoice number and payment status.</p>
+      <h3>Design highlights</h3>
+      <p>Filter logic (1 OR 2 OR 3) AND 4 AND 5 makes the alert precise. Formulas present the invoice number (or &#8220;N/A&#8221;) and paid status in plain language so Finance can act straight away.</p>
+      <div class="outcome-callout">
+        <span class="field-label">OUTCOME</span>
+        <p>Withdrawals and deferrals after invoicing now always reach Finance for a credit note, with the invoice number and paid status in the alert.</p>
+      </div>
+    </div>
+
+    <div class="flow-step" id="step-6">
+      <span class="field-label">STEP 6 · PROTECT</span>
+      <h2>Flag bursary withdrawals and deferrals</h2>
+      <p class="flow-name">Flow: Alert Finance of a bursary participant withdrawal or deferral</p>
+      <figure class="case-figure">
+        <a href="../assets/img/sfdc/flows/invoice-6-bursary.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/flows/invoice-6-bursary.png" alt="Record-triggered flow diagram: when a bursary participant withdraws or defers, alert Finance" loading="lazy"></a>
+        <figcaption>Step 6 flow. Click to open full size.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>Bursary places are funded rather than invoiced, so a withdrawal needs a different response from Finance, and these cases were easy to overlook.</p>
+      <h3>What the flow does</h3>
+      <p>When a participant on a bursary or a named bursary withdraws or defers, Finance is alerted so the funding can be reallocated or adjusted.</p>
+      <h3>Design highlights</h3>
+      <p>Filter logic (1 OR 2 OR 5) AND (3 OR 4) combines status and bursary type in one clean entry condition, keeping it separate from the fee-paying credit note flow.</p>
+      <div class="outcome-callout">
+        <span class="field-label">OUTCOME</span>
+        <p>Bursary withdrawals and deferrals reach Finance every time, so funding can be reallocated or adjusted, and they never get mixed up with fee-paying credit notes.</p>
+      </div>
+    </div>
+
+    <div class="flow-step" id="results">
+      <span class="field-label">RESULTS</span>
+      <h2>What changed for Programmes and Finance</h2>
+      <p>Outcomes follow directly from what the flows do in the live org; the figures are the flows&#8217; own settings.</p>
+      <div class="table-scroll">
+      <table class="ba-table">
+        <thead>
+          <tr><th>Before</th><th aria-hidden="true"></th><th>After the flows went live</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ba-before">The invoice tracker was compiled by hand, copying details from the application and the agreement.</td>
+            <td class="ba-arrow" aria-hidden="true">→</td>
+            <td class="ba-after">The tracker builds itself from the signed agreement, enriched from the application.</td>
+          </tr>
+          <tr>
+            <td class="ba-before">Finance was told about new invoices by ad-hoc emails.</td>
+            <td class="ba-arrow" aria-hidden="true">→</td>
+            <td class="ba-after">Finance is told about every fee-paying participant as soon as the signed agreement reaches Salesforce; bursary and partner places are excluded.</td>
+          </tr>
+          <tr>
+            <td class="ba-before">Due dates were entered inconsistently, so overdue chasing was unreliable.</td>
+            <td class="ba-arrow" aria-hidden="true">→</td>
+            <td class="ba-after">Every due date is set the moment the invoice is sent, and always lands on a working day.</td>
+          </tr>
+          <tr>
+            <td class="ba-before">Withdrawals or deferrals after invoicing were not always flagged, so credit notes could be missed.</td>
+            <td class="ba-arrow" aria-hidden="true">→</td>
+            <td class="ba-after">Withdrawals after invoicing now always reach Finance for a credit note; bursary withdrawals are flagged separately.</td>
+          </tr>
+          <tr>
+            <td class="ba-before">The earlier status flow failed silently when the tracker was not linked to the Contact.</td>
+            <td class="ba-arrow" aria-hidden="true">→</td>
+            <td class="ba-after">No silent failures: missing links are repaired automatically, and a missing record raises an alert.</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="figure-tiles">
+        <div class="card card-navy">
+          <div class="stat-number" style="color: var(--lime);">6</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.85);">hand-offs between Programmes and Finance automated</div>
+        </div>
+        <div class="card card-navy">
+          <div class="stat-number" style="color: var(--lime);">1</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.85);">shared source of truth: the Invoice Tracker</div>
+        </div>
+        <div class="card card-navy">
+          <div class="stat-number" style="color: var(--lime);">30 days</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.85);">due date set automatically, moved off weekends</div>
+        </div>
+        <div class="card card-navy">
+          <div class="stat-number" style="color: var(--lime);">2-tier</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.85);">status matching, with an alert when no record is found</div>
+        </div>
+      </div>
     </div>
 
     <div style="padding-top: 2rem; border-top: 1px dashed var(--border);">
-      <h2>Project snapshots</h2>
-      <figure class="case-figure">
-        <a href="../assets/img/sfdc/invoice-lifecycle-diagram.png" target="_blank" rel="noopener"><img src="../assets/img/sfdc/invoice-lifecycle-diagram.png" alt="Diagram of the invoice lifecycle: participant sign-up, invoice generated, reminder if unpaid, credit note alert to finance, payment record marked paid" loading="lazy"></a>
-        <figcaption>How the lifecycle runs, from sign-up to paid. (Process diagram, not a screenshot.)</figcaption>
-      </figure>
+      <p class="flow-note">Diagrams are drawn from each flow&#8217;s live metadata in a production org, showing every element, decision outcome and path as built. No participant data is shown, and the organisation is not named.</p>
+      <a href="../assets/docs/Reindolf_Manu_Salesforce_Flows_Portfolio.pdf" class="btn btn-navy" target="_blank" rel="noopener">Download the Salesforce Flows portfolio (PDF)</a>
     </div>
 
   </div>

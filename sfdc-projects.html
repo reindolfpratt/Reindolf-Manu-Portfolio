@@ -55,8 +55,11 @@
     <span class="eyebrow">SALESFORCE &amp; CRM PROJECTS</span>
     <h1>Salesforce work, in detail.</h1>
     <p class="lead">
-      Flow automations, validation rules, security models, and the third-party integrations that hold it all together: four projects, walked through properly.
+      Flow automations, validation rules, security models, and the third-party integrations that hold it all together: eleven projects, walked through properly.
     </p>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem;">
+      <a href="assets/docs/Reindolf_Manu_Salesforce_Flows_Portfolio.pdf" class="btn btn-navy" target="_blank" rel="noopener">Download the Salesforce Flows portfolio (PDF)</a>
+    </div>
   </div>
 </section>
 
@@ -65,15 +68,53 @@
   <div class="container">
     <div class="card-grid">
 
-      <!-- SFDC Project 1: Clore Social -->
+      <!-- Featured: Automated Survey Follow-Up Framework -->
       <div class="card">
         <div>
-          <a href="projects/clore-social-crm.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/flow-record-create-update-complex-conditions.png" alt="Salesforce record-triggered flow that gets contact records and creates or updates them based on a decision" class="card-thumb thumb-contain" loading="lazy"></a>
+          <a href="projects/survey-follow-up-framework.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/flows/survey-thumb.png" alt="Scheduled Salesforce flow that checks participant status, guards against chasing twice in one day, and sends timed chase emails" class="card-thumb" loading="lazy"></a>
+          <div class="card-header">
+            <span class="tag-pill">Flow Automation</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">UK leadership-development charity</span>
+          </div>
+          <h3 class="card-title"><a href="projects/survey-follow-up-framework.html">Automated Survey Follow-Up Framework</a></h3>
+          <div class="card-fields">
+            <div class="field">
+              <span class="field-label">PROBLEM STATEMENT</span>
+              <p class="field-text">Survey responses from Jotform sat unlinked to participants, there was no single view of who had completed what, and staff chased non-respondents by hand from spreadsheets.</p>
+            </div>
+            <div class="field">
+              <span class="field-label">TECHNICAL APPROACH</span>
+              <p class="field-text">Designed a hub-and-spoke Follow Up object and six layers of Salesforce Flow (create, link, track, chase, sync, reconcile), applied to every survey type across more than 35 active flows.</p>
+            </div>
+            <div class="field">
+              <span class="field-label">MEASURABLE OUTCOME</span>
+              <p class="field-text">Every response is linked to its participant as it arrives, completion for up to 9 surveys sits in one place, and non-respondents are chased automatically: four reminders, then escalation to the programme lead.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="tools-wrap">
+            <span class="tool-chip">Record-Triggered Flows</span>
+            <span class="tool-chip">Scheduled Flows</span>
+            <span class="tool-chip">Jotform</span>
+            <span class="tool-chip">Email Templates</span>
+            <span class="tool-chip">Custom Objects</span>
+          </div>
+          <div class="card-footer">
+            <a href="projects/survey-follow-up-framework.html" class="link-arrow">Read case study →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SFDC Project 1: Program Tracking & CRM Efficiency -->
+      <div class="card">
+        <div>
+          <a href="projects/crm-process-automation.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/flow-record-create-update-complex-conditions.png" alt="Salesforce record-triggered flow that gets contact records and creates or updates them based on a decision" class="card-thumb thumb-contain" loading="lazy"></a>
           <div class="card-header">
             <span class="tag-pill">Process Automation</span>
-            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Clore Social Leadership</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">UK leadership-development charity</span>
           </div>
-          <h3 class="card-title"><a href="projects/clore-social-crm.html">Program Tracking &amp; CRM Efficiency Automation</a></h3>
+          <h3 class="card-title"><a href="projects/crm-process-automation.html">Program Tracking &amp; CRM Efficiency Automation</a></h3>
           <div class="card-fields">
             <div class="field">
               <span class="field-label">PROBLEM STATEMENT</span>
@@ -98,7 +139,7 @@
             <span class="tool-chip">Mailchimp</span>
           </div>
           <div class="card-footer">
-            <a href="projects/clore-social-crm.html" class="link-arrow">Read case study →</a>
+            <a href="projects/crm-process-automation.html" class="link-arrow">Read case study →</a>
           </div>
         </div>
       </div>
@@ -233,7 +274,7 @@
           <a href="projects/feedback-360-process.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/flow-update-after-respondent-email.png" alt="Salesforce record-triggered flow on 360 Respondents that sends 360 emails and updates records" class="card-thumb thumb-contain" loading="lazy"></a>
           <div class="card-header">
             <span class="tag-pill">Experience Cloud &amp; LWC</span>
-            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Clore Social Leadership</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">UK leadership-development charity</span>
           </div>
           <h3 class="card-title"><a href="projects/feedback-360-process.html">360 Feedback Process</a></h3>
           <div class="card-fields">
@@ -265,34 +306,34 @@
         </div>
       </div>
 
-      <!-- Automated Invoice &amp; Payment Lifecycle -->
+      <!-- Finance &amp; Invoice Automation -->
       <div class="card">
         <div>
-          <a href="projects/invoice-payment-automation.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/invoice-lifecycle-diagram.png" alt="Diagram of the automated invoice lifecycle from participant sign-up to payment marked as paid" class="card-thumb" loading="lazy"></a>
+          <a href="projects/invoice-payment-automation.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/flows/invoice-4-status-sync.png" alt="Salesforce flow that keeps invoice status in step with the participant, with two-tier matching and an alert when no record is found" class="card-thumb thumb-contain" loading="lazy"></a>
           <div class="card-header">
             <span class="tag-pill">Finance Automation</span>
-            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Clore Social Leadership</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">UK leadership-development charity</span>
           </div>
-          <h3 class="card-title"><a href="projects/invoice-payment-automation.html">Automated Invoice &amp; Payment Lifecycle</a></h3>
+          <h3 class="card-title"><a href="projects/invoice-payment-automation.html">Finance &amp; Invoice Automation</a></h3>
           <div class="card-fields">
             <div class="field">
               <span class="field-label">PROBLEM STATEMENT</span>
-              <p class="field-text">Finance tracked invoices, unpaid balances, credit notes and payments by hand, which was slow, error-prone and led to missed follow-ups.</p>
+              <p class="field-text">The invoice tracker was compiled by hand, Finance heard about new invoices through ad-hoc emails, and withdrawals after invoicing were not always flagged, so credit notes could be missed.</p>
             </div>
             <div class="field">
               <span class="field-label">TECHNICAL APPROACH</span>
-              <p class="field-text">Built an end-to-end lifecycle in Salesforce: invoice on sign-up, scheduled reminders for unpaid invoices, credit-note alerts to finance, and automatic paid status on confirmation.</p>
+              <p class="field-text">Made the Invoice Tracker the shared source of truth between Programmes and Finance, and automated six hand-offs with Salesforce Flows: populate, notify, schedule, sync, and two protective alerts.</p>
             </div>
             <div class="field">
               <span class="field-label">MEASURABLE OUTCOME</span>
-              <p class="field-text">Manual invoice tracking stopped, missed payment follow-ups dropped to near zero, and outstanding balances are visible in real time.</p>
+              <p class="field-text">The tracker builds itself from the signed agreement, every due date lands on a working day, and withdrawals after invoicing always reach Finance for a credit note.</p>
             </div>
           </div>
         </div>
         <div>
           <div class="tools-wrap">
             <span class="tool-chip">Salesforce Flows</span>
-            <span class="tool-chip">Xero</span>
+            <span class="tool-chip">Formulas</span>
             <span class="tool-chip">Email Alerts</span>
             <span class="tool-chip">Custom Objects</span>
           </div>
@@ -301,7 +342,6 @@
           </div>
         </div>
       </div>
-
       <!-- CRM Automation &amp; Process Migration -->
       <div class="card">
         <div>
@@ -345,7 +385,7 @@
           <a href="projects/einstein-activity-capture.html" class="card-thumb-link" tabindex="-1" aria-hidden="true"><img src="assets/img/sfdc/einstein-activity-capture-diagram.png" alt="Diagram of Gmail and calendar activity syncing through Einstein Activity Capture to Salesforce participant records" class="card-thumb" loading="lazy"></a>
           <div class="card-header">
             <span class="tag-pill">Setup &amp; Training</span>
-            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Clore Social Leadership</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">UK leadership-development charity</span>
           </div>
           <h3 class="card-title"><a href="projects/einstein-activity-capture.html">Einstein Activity Capture Setup &amp; Team Training</a></h3>
           <div class="card-fields">
